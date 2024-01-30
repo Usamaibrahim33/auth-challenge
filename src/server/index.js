@@ -16,10 +16,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 
-
-
 import userRouter from './routers/user.js';
 app.use('/user', userRouter);
+
 
 import movieRouter from './routers/movie.js';
 app.use('/movie', movieRouter);
