@@ -1,7 +1,8 @@
 import { PrismaClient } from "@prisma/client";
-
-
 const prisma = new PrismaClient();
+
+
+
 const createNewMovieDb = async (title, description, runtimeMins, userName) => {
     console.log(userName) 
     return await prisma.movie.create({
@@ -19,6 +20,8 @@ const createNewMovieDb = async (title, description, runtimeMins, userName) => {
     })
 }
 
+
+
 const getAllMoviesDb = async (username) => {
    return await prisma.movie.findMany({
     where : {
@@ -26,8 +29,6 @@ const getAllMoviesDb = async (username) => {
     }
    })
 }
-
-
 
 
 const deleteMovieByIdDb = async (userId, userName) => {
@@ -42,4 +43,4 @@ const deleteMovieByIdDb = async (userId, userName) => {
 
 
 
-export { createNewMovieDb, getAllMoviesDb, deleteMovieByIdDb};
+export { createNewMovieDb, getAllMoviesDb, deleteMovieByIdDb };
